@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Admin-Quiz </title>
+    <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+
+  <div class="container"> 
+     <!-- 1. DEFAULT FIRST LOOK: USER SIGN IN FORM -->
+        <div id="user-signin-box" class="form-box active">
+           
+            <!-- <p class="subtitle">Sign in to your Admin dashboard account workspace</p> -->
+            <form onsubmit="handleAuth(event, 'dashboard.html')">
+        
+                <div class="input-group">
+    <h1> admin-Login </h1>
+  <input type="text" id="username" placeholder="Enter your username">
+  <input type="password" id="password" placeholder="Enter your password">
+                </div>
+  <button  onclick="login()">Login</button>
+  <p id="error-message" style="color: red;"></p>
+
+
+
+<script>   
+    const firebaseConfig = {
+  apiKey: "AIzaSyAQlVBHhrV5Yj7tJgGAtnprqUFJC7dVizo",
+  authDomain: "quiz-app-ae9d8.firebaseapp.com",
+  databaseURL: "https://quiz-app-ae9d8-default-rtdb.firebaseio.com",
+  projectId: "quiz-app-ae9d8",
+  storageBucket: "quiz-app-ae9d8.firebasestorage.app",
+  messagingSenderId: "562017146498",
+  appId: "1:562017146498:web:7c436b58b446c64e03869b",
+  measurementId: "G-58QB3HK9S8"
+};
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+  const auth = firebase.auth();
+  const storage = firebase.storage();
+</script>
+<script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-database-compat.js"></script>
+<script src="https://quiz-app-a7554-default-rtdb.firebaseio.com"> </script>
+</script>
+<script src="./admin.js"> </script>
+</body>
+</html>
