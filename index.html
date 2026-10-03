@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduStream - Learning Management System</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">🎓 Star-Education</a>
+
+        <div class="user-area">
+            <span>Welcome back, <strong> khurram </strong></span>
+            <img src="./Assets/khurram.jpg" alt="Profile">
+        </div>
+    </header>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+            <nav>
+                <button class="nav-link active" data-tab="dashboard">
+                    🏠 Dashboard
+                </button>
+
+                <button class="nav-link" data-tab="courses">
+                    📚 My Courses
+                </button>
+
+                <button class="nav-link" id="addCourseNav">
+                    ➕ Add Course
+                </button>
+                <button class="nav-link" id="students">
+                    ➕ Students
+                </button>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <section id="dashboard-view">
+                <div class="page-header">
+                    <h1>Dashboard</h1>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <div>
+                            <p>In Progress</p>
+                            <h2 id="stat-in-progress">0</h2>
+                        </div>
+                        <div class="stat-icon purple">⏳</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div>
+                            <p>Completed</p>
+                            <h2 id="stat-completed">0</h2>
+                        </div>
+                        <div class="stat-icon green">✓</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-message">
+                    <h2>Welcome to <Star-Education></Star-Education> 👋</h2>
+                    <p>Manage your courses and track your learning progress.</p>
+                </div>
+            </section>
+
+            <section id="courses-view" class="hidden">
+                <div class="page-header courses-header">
+                    <h1>Your Courses</h1>
+                    <button class="primary-btn" id="addCourseBtn">+ Add Course</button>
+                </div>
+
+                <div class="course-grid" id="course-grid"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <div class="modal hidden" id="addCourseModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Enroll in a New Course</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+
+            <form id="courseForm">
+
+                <label for="courseTitle">Course Title</label>
+                <input
+                    type="text"
+                    id="courseTitle"
+                    placeholder="e.g. Advanced JavaScript"
+                    required
+                >
+
+                <label for="courseInstructor">Instructor Name</label>
+                <input
+                    type="text"
+                    id="courseInstructor"
+                    placeholder="e.g. Hammad Khan"
+                    required
+                >
+
+                <label for="courseProgress">Starting Progress (%)</label>
+                <input
+                    type="number"
+                    id="courseProgress"
+                    min="0"
+                    max="100"
+                    value="0"
+                    required
+                >
+
+                <button type="submit" class="primary-btn full-width">
+                    Add Course
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
